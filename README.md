@@ -30,7 +30,7 @@ JeeFast快速开发平台是基于多个优秀的开源项目，将各个亮点�
 - 创建数据库jeefast，数据库编码为UTF-8
 - 执行doc/db.sql文件，初始化数据
 - 修改application-dev.yml，更新MySQL账号和密码
-- Eclipse、IDEA运行JeeFastApplication.java，则可启动项目
+- Eclipse运行JeeFastApplication.java，则可启动项目
 - 项目访问路径：http://localhost:8080/jeefast
 - 账号密码：admin/123456
 
