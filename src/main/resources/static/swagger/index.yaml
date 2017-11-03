@@ -1,10 +1,10 @@
 swagger: '2.0'
 info:
-  description: renren-fastplus是一个轻量级的Java快速开发平台
+  description: jeefast是一个轻量级的Java快速开发平台
   version: 1.0.0
-  title: 人人快速开发平台(企业版)
+  title: jeefast快速开发平台
 
-basePath: /renren-fastplus
+basePath: /jeefast
 
 schemes:
   - http
@@ -71,8 +71,8 @@ paths:
   /sys/user/list:
     get:
       tags:
-        - 管理员管理
-      summary: 管理员列表
+        - 用户管理
+      summary: 用户管理列表
       produces:
         - application/json
       parameters:
@@ -100,26 +100,26 @@ paths:
           type: string
       responses:
         '200':
-          description: 返回管理员列表
+          description: 返回用户列表
           schema:
-            $ref: '#/definitions/SysUserEntity'
+            $ref: '#/definitions/SysUser'
   /sys/user/info:
     get:
       tags:
-        - 管理员管理
-      summary: 当前管理员信息
+        - 用户管理
+      summary: 当前用户信息
       produces:
         - application/json
       responses:
         '200':
           description: 返回当前管理员信息
           schema:
-            $ref: '#/definitions/SysUserEntity'
+            $ref: '#/definitions/SysUser'
   /sys/user/info/{userId}:
     get:
       tags:
-        - 管理员管理
-      summary: 获取管理员信息
+        - 用户管理
+      summary: 获取用户信息
       produces:
         - application/json
       parameters:
@@ -130,13 +130,13 @@ paths:
           required: true
       responses:
         '200':
-          description: 返回管理员信息
+          description: 返回用户信息
           schema:
-            $ref: '#/definitions/SysUserEntity'
+            $ref: '#/definitions/SysUser'
   /sys/user/password:
     post:
       tags:
-        - 管理员管理
+        - 用户管理
       summary: 修改密码
       produces:
         - application/json
@@ -158,8 +158,8 @@ paths:
   /sys/user/save:
     post:
       tags:
-        - 管理员管理
-      summary: 添加管理员
+        - 用户管理
+      summary: 添加用户
       produces:
         - application/json
       parameters:
@@ -168,7 +168,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysUserEntityEdit'
+            $ref: '#/definitions/SysUserEdit'
           required: true
       responses:
         '200':
@@ -177,17 +177,17 @@ paths:
   /sys/user/update:
     post:
       tags:
-        - 管理员管理
-      summary: 修改管理员
+        - 用户管理
+      summary: 修改用户
       produces:
         - application/json
       parameters:
         - name: body
-          description: 管理员对象
+          description: 用户对象
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysUserEntityEdit'
+            $ref: '#/definitions/SysUserEdit'
           required: true
       responses:
         '200':
@@ -196,8 +196,8 @@ paths:
   /sys/user/delete:
     post:
       tags:
-        - 管理员管理
-      summary: 删除管理员
+        - 用户管理
+      summary: 删除用户
       produces:
         - application/json
       parameters:
@@ -226,7 +226,7 @@ paths:
         '200':
           description: 返回部门列表
           schema:
-            $ref: '#/definitions/SysDeptEntity'
+            $ref: '#/definitions/SysDept'
   /sys/dept/select:
     get:
       tags:
@@ -239,7 +239,7 @@ paths:
         '200':
           description: 返回部门列表
           schema:
-            $ref: '#/definitions/SysDeptEntity'
+            $ref: '#/definitions/SysDept'
   /sys/dept/info:
     get:
       tags:
@@ -281,7 +281,7 @@ paths:
         '200':
           description: 返回部门信息
           schema:
-            $ref: '#/definitions/SysDeptEntity'
+            $ref: '#/definitions/SysDept'
   /sys/dept/save:
     post:
       tags:
@@ -295,7 +295,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysDeptEntityEdit'
+            $ref: '#/definitions/SysDeptEdit'
           required: true
       responses:
         '200':
@@ -314,7 +314,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysDeptEntityEdit'
+            $ref: '#/definitions/SysDeptEdit'
           required: true
       responses:
         '200':
@@ -376,7 +376,7 @@ paths:
         '200':
           description: 返回管理员列表
           schema:
-            $ref: '#/definitions/SysRoleEntity'
+            $ref: '#/definitions/SysRole'
   /sys/role/select:
     get:
       tags:
@@ -389,7 +389,7 @@ paths:
         '200':
           description: 返回管理员列表
           schema:
-            $ref: '#/definitions/SysRoleEntity'
+            $ref: '#/definitions/SysRole'
   /sys/role/info/{roleId}:
     get:
       tags:
@@ -407,7 +407,7 @@ paths:
         '200':
           description: 返回角色信息
           schema:
-            $ref: '#/definitions/SysRoleEntity'
+            $ref: '#/definitions/SysRole'
   /sys/role/save:
     post:
       tags:
@@ -421,7 +421,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysRoleEntityEdit'
+            $ref: '#/definitions/SysRoleEdit'
           required: true
       responses:
         '200':
@@ -440,7 +440,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysRoleEntityEdit'
+            $ref: '#/definitions/SysRoleEdit'
           required: true
       responses:
         '200':
@@ -479,7 +479,7 @@ paths:
         '200':
           description: 返回菜单列表
           schema:
-            $ref: '#/definitions/SysMenuEntity'
+            $ref: '#/definitions/SysMenu'
   /sys/menu/nav:
     get:
       tags:
@@ -491,7 +491,7 @@ paths:
         '200':
           description: 返回导航菜单列表
           schema:
-            $ref: '#/definitions/SysMenuEntity'
+            $ref: '#/definitions/SysMenu'
   /sys/menu/select:
     get:
       tags:
@@ -504,7 +504,7 @@ paths:
         '200':
           description: 返回菜单列表
           schema:
-            $ref: '#/definitions/SysMenuEntity'
+            $ref: '#/definitions/SysMenu'
   /sys/menu/info/{menuId}:
     get:
       tags:
@@ -522,7 +522,7 @@ paths:
         '200':
           description: 返回菜单信息
           schema:
-            $ref: '#/definitions/SysRoleEntity'
+            $ref: '#/definitions/SysRole'
   /sys/menu/save:
     post:
       tags:
@@ -536,7 +536,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysMenuEntityEdit'
+            $ref: '#/definitions/SysMenuEdit'
           required: true
       responses:
         '200':
@@ -555,7 +555,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysMenuEntityEdit'
+            $ref: '#/definitions/SysMenuEdit'
           required: true
       responses:
         '200':
@@ -617,7 +617,7 @@ paths:
         '200':
           description: 返回日志列表
           schema:
-            $ref: '#/definitions/SysLogEntity'
+            $ref: '#/definitions/SysLog'
 
   /sys/config/list:
     get:
@@ -653,7 +653,7 @@ paths:
         '200':
           description: 返回参数列表
           schema:
-            $ref: '#/definitions/SysConfigEntity'
+            $ref: '#/definitions/SysConfig'
   /sys/config/info/{id}:
     get:
       tags:
@@ -671,7 +671,7 @@ paths:
         '200':
           description: 返回参数信息
           schema:
-            $ref: '#/definitions/SysConfigEntity'
+            $ref: '#/definitions/SysConfig'
   /sys/config/save:
     post:
       tags:
@@ -685,7 +685,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysConfigEntity'
+            $ref: '#/definitions/SysConfig'
           required: true
       responses:
         '200':
@@ -704,7 +704,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysConfigEntity'
+            $ref: '#/definitions/SysConfig'
           required: true
       responses:
         '200':
@@ -762,7 +762,7 @@ paths:
         '200':
           description: 返回文件列表
           schema:
-            $ref: '#/definitions/SysOssEntity'
+            $ref: '#/definitions/SysOss'
   /sys/oss/config:
     get:
       tags:
@@ -774,7 +774,7 @@ paths:
         '200':
           description: 返回云存储配置信息
           schema:
-            $ref: '#/definitions/SysCloudStorageEntity'
+            $ref: '#/definitions/SysCloudStorage'
   /sys/oss/saveConfig:
     post:
       tags:
@@ -788,7 +788,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/SysCloudStorageEntity'
+            $ref: '#/definitions/SysCloudStorage'
           required: true
       responses:
         '200':
@@ -881,7 +881,7 @@ paths:
         '200':
           description: 返回定时任务列表
           schema:
-            $ref: '#/definitions/ScheduleJobEntity'
+            $ref: '#/definitions/ScheduleJob'
   /sys/schedule/info/{id}:
     get:
       tags:
@@ -899,7 +899,7 @@ paths:
         '200':
           description: 返回定时任务信息
           schema:
-            $ref: '#/definitions/ScheduleJobEntity'
+            $ref: '#/definitions/ScheduleJob'
   /sys/schedule/save:
     post:
       tags:
@@ -913,7 +913,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/ScheduleJobEntity'
+            $ref: '#/definitions/ScheduleJob'
           required: true
       responses:
         '200':
@@ -932,7 +932,7 @@ paths:
           in: body
           type: string
           schema:
-            $ref: '#/definitions/ScheduleJobEntity'
+            $ref: '#/definitions/ScheduleJob'
           required: true
       responses:
         '200':
@@ -1035,7 +1035,7 @@ definitions:
         msg:
           description: 失败原因
           type: string
-  SysUserEntity:
+  SysUser:
     type: object
     properties:
       userId:
@@ -1079,7 +1079,7 @@ definitions:
         description: 创建时间
         type: string
         format: date-time
-  SysUserEntityEdit:
+  SysUserEdit:
       type: object
       properties:
         userId:
@@ -1112,7 +1112,7 @@ definitions:
           items:
             type: integer
             format: int32
-  SysDeptEntity:
+  SysDept:
     type: object
     properties:
       deptId:
@@ -1137,7 +1137,7 @@ definitions:
         description: 是否展开   true：展开   false：不展开
         type: boolean
         format: int32
-  SysDeptEntityEdit:
+  SysDeptEdit:
     type: object
     properties:
       name:
@@ -1151,7 +1151,7 @@ definitions:
         description: 排序
         type: integer
         format: int32
-  SysRoleEntity:
+  SysRole:
     type: object
     properties:
       roleId:
@@ -1185,7 +1185,7 @@ definitions:
         description: 创建时间
         type: string
         format: date-time
-  SysRoleEntityEdit:
+  SysRoleEdit:
     type: object
     properties:
       roleId:
@@ -1208,7 +1208,7 @@ definitions:
         items:
           type: integer
           format: int64
-  SysMenuEntity:
+  SysMenu:
     type: object
     properties:
       menuId:
@@ -1246,7 +1246,7 @@ definitions:
         description: 是否展开   true：展开   false：不展开
         type: boolean
         format: int32
-  SysMenuEntityEdit:
+  SysMenuEdit:
     type: object
     properties:
       menuId:
@@ -1277,7 +1277,7 @@ definitions:
         description: 排序
         type: integer
         format: int32
-  SysLogEntity:
+  SysLog:
     type: object
     properties:
       id:
@@ -1307,7 +1307,7 @@ definitions:
         description: 创建时间
         type: string
         format: date-time
-  SysConfigEntity:
+  SysConfig:
     type: object
     properties:
       id:
@@ -1323,7 +1323,7 @@ definitions:
       remark:
         description: 备注
         type: string
-  SysOssEntity:
+  SysOss:
     type: object
     properties:
       id:
@@ -1337,7 +1337,7 @@ definitions:
         description: 创建时间
         type: string
         format: date-time
-  SysCloudStorageEntity:
+  SysCloudStorage:
     type: object
     properties:
       type:
@@ -1398,7 +1398,7 @@ definitions:
       qcloudRegion:
         description: 腾讯云COS所属地区
         type: string
-  ScheduleJobEntity:
+  ScheduleJob:
     type: object
     properties:
       jobId:
