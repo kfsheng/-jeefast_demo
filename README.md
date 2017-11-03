@@ -41,4 +41,5 @@ JeeFast快速开发平台是基于多个优秀的开源项目，将各个亮点�
 ![输入图片说明](https://gitee.com/uploads/images/2017/1101/142637_e8136e76_718698.jpeg "部门管理.jpg")
 ![输入图片说明](https://gitee.com/uploads/images/2017/1101/142651_245a2f0a_718698.jpeg "菜单管理.jpg")
 ![输入图片说明](https://gitee.com/uploads/images/2017/1101/142701_3d35c266_718698.jpeg "定时任务.jpg")
+![输入图片说明](https://gitee.com/uploads/images/2017/1103/092032_4d28ccb5_718698.jpeg "swagger.jpg")
 
