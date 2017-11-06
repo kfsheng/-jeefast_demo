@@ -4,17 +4,18 @@ var menuItem = Vue.extend({
 	props:{item:{},index:0},
 	template:[
 	          '<li :class="{active: (item.type===0 && index === 0)}">',
-				  '<a v-if="item.type === 0" href="javascript:;">',
-					  '<i v-if="item.icon != null" :class="item.icon"></i>',
-					  '<span>{{item.name}}</span>',
-					  '<i class="fa fa-angle-left pull-right"></i>',
+				  '<a v-if="item.type === 0" href="#" class="dropdown-toggle">',
+					  '<i v-if="item.icon != null" :class="\'menu-icon \'+item.icon"></i>',
+					  '<span class="menu-text"> {{item.name}} </span>',
+					  '<b class="arrow fa fa-angle-down"></b>',
 				  '</a>',
-				  '<ul v-if="item.type === 0" class="treeview-menu">',
+				  '<b class="arrow"></b>',
+				  '<ul v-if="item.type === 0" class="submenu">',
 					  '<menu-item :item="item" :index="index" v-for="(item, index) in item.list"></menu-item>',
 				  '</ul>',
-				  '<a v-if="item.type === 1" :href="\'#\'+item.url">' +
-					  '<i v-if="item.icon != null" :class="item.icon"></i>' +
-					  '<i v-else class="fa fa-circle-o"></i> {{item.name}}' +
+				  '<a v-if="item.type === 1" :href="\'#\'+item.url" data-url="{{item.url}}">' +
+					  '<i v-if="item.icon != null" :class="\'menu-icon \'+item.icon"></i>' +
+					  '<i v-else class="menu-icon fa fa-caret-right"></i> {{item.name}}' +
 				  '</a>',
 	          '</li>'
 	].join('')
@@ -33,7 +34,7 @@ $(window).on('resize', function() {
 Vue.component('menuItem',menuItem);
 
 var vm = new Vue({
-	el:'#rrapp',
+	el:'#jeefastapp',
 	data:{
 		user:{},
 		menuList:{},
@@ -54,13 +55,21 @@ var vm = new Vue({
 				vm.user = r.user;
 			});
 		},
+		profile: function(){
+			/*$.getJSON(baseURL + "sys/user/info", function(r){
+				vm.user = r.user;
+			});*/
+		},
 		updatePassword: function(){
 			layer.open({
 				type: 1,
-				skin: 'layui-layer-molv',
+				//offset: '50px',
+				//skin: 'layui-layer-molv',
 				title: "修改密码",
-				area: ['550px', '270px'],
-				shadeClose: false,
+				area: ['450px', '320px'],
+				scrollbar: false,
+				shade: 0,
+                shadeClose: false,
 				content: jQuery("#passwordLayer"),
 				btn: ['修改','取消'],
 				btn1: function (index) {
@@ -89,16 +98,6 @@ var vm = new Vue({
             localStorage.removeItem("token");
             //跳转到登录页面
             location.href = baseURL + 'login.html';
-        },
-        donate: function () {
-            layer.open({
-                type: 2,
-                title: false,
-                area: ['806px', '467px'],
-                closeBtn: 1,
-                shadeClose: false,
-                content: ['http://cdn.renren.io/donate.jpg', 'no']
-            });
         }
 	},
 	created: function(){
@@ -113,8 +112,6 @@ var vm = new Vue({
     }
 });
 
-
-
 function routerList(router, menuList){
 	for(var key in menuList){
 		var menu = menuList[key];
@@ -128,8 +125,8 @@ function routerList(router, menuList){
 			    vm.main = url.replace('#', '');
 			    
 			    //导航菜单展开
-			    $(".treeview-menu li").removeClass("active");
-                $(".sidebar-menu li").removeClass("active");
+			    $(".submenu li").removeClass("active");
+                $(".nav-list li").removeClass("active");
 			    $("a[href='"+url+"']").parents("li").addClass("active");
 
 			    vm.navTitle = $("a[href='"+url+"']").text();
