@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
 
 /**
  * <p>
@@ -21,7 +22,7 @@ public class SysUserToken extends Model<SysUserToken> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("user_id")
+    @TableId(value = "user_id",type = IdType.INPUT) 
 	private Long userId;
     /**
      * token
