@@ -21,6 +21,7 @@ JeeFast快速开发平台是基于多个优秀的开源项目，将各个亮点�
 - 数据库连接池：Druid 1.1.3
 - 日志管理：SLF4J 1.7、Log4j
 - 页面交互：Vue2.x
+- CSS框架：Twitter Bootstrap
 
 ## 本地部署
 - 通过git下载源码
@@ -36,11 +37,13 @@ JeeFast快速开发平台是基于多个优秀的开源项目，将各个亮点�
 2.[mybatis-plus](https://gitee.com/baomidou/mybatis-plus)
 
 ## 效果图
-![输入图片说明](https://gitee.com/uploads/images/2017/1101/142531_ccf971ef_718698.jpeg "系统登录.jpg")
+![输入图片说明](https://gitee.com/uploads/images/2017/1106/212319_6de26405_718698.jpeg "登录.jpg")
+![输入图片说明](https://gitee.com/uploads/images/2017/1106/212334_a2f6eff7_718698.jpeg "系统首页.jpg")
+![输入图片说明](https://gitee.com/uploads/images/2017/1106/212407_312db283_718698.jpeg "用户管理.jpg")
+![输入图片说明](https://gitee.com/uploads/images/2017/1106/212416_b9296c7b_718698.jpeg "部门管理.jpg")
+![输入图片说明](https://gitee.com/uploads/images/2017/1106/212423_eb914cfe_718698.jpeg "菜单管理.jpg")
+![输入图片说明](https://gitee.com/uploads/images/2017/1106/212432_e3e5cc82_718698.jpeg "定时任务.jpg")
+![输入图片说明](https://gitee.com/uploads/images/2017/1106/212443_45d06e1f_718698.jpeg "系统日志.jpg")
 ![输入图片说明](https://gitee.com/uploads/images/2017/1101/142613_67c39d8c_718698.jpeg "首页.jpg")
-![输入图片说明](https://gitee.com/uploads/images/2017/1101/142625_09b1cf57_718698.jpeg "用户管理.jpg")
-![输入图片说明](https://gitee.com/uploads/images/2017/1101/142637_e8136e76_718698.jpeg "部门管理.jpg")
-![输入图片说明](https://gitee.com/uploads/images/2017/1101/142651_245a2f0a_718698.jpeg "菜单管理.jpg")
-![输入图片说明](https://gitee.com/uploads/images/2017/1101/142701_3d35c266_718698.jpeg "定时任务.jpg")
 ![输入图片说明](https://gitee.com/uploads/images/2017/1103/092032_4d28ccb5_718698.jpeg "swagger.jpg")
 
