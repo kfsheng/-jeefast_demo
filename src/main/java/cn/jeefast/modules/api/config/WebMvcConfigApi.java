@@ -19,7 +19,7 @@ import java.util.List;
  * @date 2017-10-20 21:30
  */
 @Configuration
-public class WebMvcConfig extends WebMvcConfigurerAdapter {
+public class WebMvcConfigApi extends WebMvcConfigurerAdapter {
     @Autowired
     private AuthorizationInterceptor authorizationInterceptor;
     @Autowired
