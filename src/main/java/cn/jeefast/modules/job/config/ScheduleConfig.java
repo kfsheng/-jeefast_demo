@@ -41,7 +41,7 @@ public class ScheduleConfig {
         prop.put("org.quartz.jobStore.tablePrefix", "QRTZ_");
         factory.setQuartzProperties(prop);
 
-        factory.setSchedulerName("RenrenScheduler");
+        factory.setSchedulerName("JeeFastScheduler");
         //延时启动
         factory.setStartupDelay(30);
         factory.setApplicationContextSchedulerContextKey("applicationContextKey");
