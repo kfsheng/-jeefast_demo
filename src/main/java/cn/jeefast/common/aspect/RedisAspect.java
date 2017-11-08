@@ -22,7 +22,7 @@ import cn.jeefast.common.exception.RRException;
 public class RedisAspect {
     private Logger logger = LoggerFactory.getLogger(getClass());
     //是否开启redis缓存  true开启   false关闭
-    @Value("${redis.open: false}")
+    @Value("${spring.redis.open: false}")
     private boolean open;
 
     @Around("execution(* cn.jeefast.common.utils.RedisUtils.*(..))")
