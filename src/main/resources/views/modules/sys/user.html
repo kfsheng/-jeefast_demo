@@ -31,6 +31,8 @@
 				<a v-if="hasPermission('sys:user:save')" class="btn btn-primary btn-sm" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
 				<a v-if="hasPermission('sys:user:update')" class="btn btn-primary btn-sm" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
 				<a v-if="hasPermission('sys:user:delete')" class="btn btn-primary btn-sm" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+				
+				<a v-if="hasPermission('sys:user:exportExcel')" class="btn btn-primary btn-sm" @click="exportExcel"><i class="fa fa-trash-o"></i>&nbsp;导出</a>
 			</div>
 		</div>
 	    <table id="jqGrid"></table>

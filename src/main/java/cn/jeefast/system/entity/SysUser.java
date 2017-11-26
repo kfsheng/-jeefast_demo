@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 
+import cn.jeefast.common.excel.ExcelResources;
 import cn.jeefast.common.validator.group.AddGroup;
 import cn.jeefast.common.validator.group.UpdateGroup;
 
@@ -102,7 +103,8 @@ public class SysUser extends Model<SysUser> {
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-
+	
+	@ExcelResources(title="用户名",order=1)
 	public String getUsername() {
 		return username;
 	}
@@ -127,6 +129,7 @@ public class SysUser extends Model<SysUser> {
 		this.salt = salt;
 	}
 
+	@ExcelResources(title="邮箱",order=2)
 	public String getEmail() {
 		return email;
 	}
@@ -135,6 +138,7 @@ public class SysUser extends Model<SysUser> {
 		this.email = email;
 	}
 
+	@ExcelResources(title="手机号",order=3)
 	public String getMobile() {
 		return mobile;
 	}
@@ -159,6 +163,7 @@ public class SysUser extends Model<SysUser> {
 		this.deptId = deptId;
 	}
 
+	@ExcelResources(title="创建时间",order=5)
 	public Date getCreateTime() {
 		return createTime;
 	}
@@ -167,6 +172,7 @@ public class SysUser extends Model<SysUser> {
 		this.createTime = createTime;
 	}
 	
+	@ExcelResources(title="部门名称",order=4)
 	public String getDeptName() {
 		return deptName;
 	}

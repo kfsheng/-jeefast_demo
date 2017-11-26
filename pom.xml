@@ -178,11 +178,27 @@
 			</exclusions>
 		</dependency>
 		<!--常用库依赖 -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>23.0</version>
-		</dependency> -->
+		</dependency>
+		<!--poi操作Excel -->
+		<dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.15</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-scratchpad</artifactId>
+            <version>3.15</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <!-- <version>1.9.3</version> -->
+        </dependency>
 	</dependencies>
 
 	<build>

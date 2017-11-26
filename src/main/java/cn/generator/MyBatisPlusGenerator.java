@@ -62,9 +62,9 @@ public class MyBatisPlusGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        //strategy.setTablePrefix(new String[]{"_"});// 此处可以修改为您的表前缀
+         //strategy.setTablePrefix(new String[]{"pf_"});// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        // strategy.setInclude(new String[] { "user" }); // 需要生成的表
+         //strategy.setInclude(new String[] { "pf_notice" }); // 需要生成的表
         // 排除生成的表
         strategy.setExclude(new String[]{"qrtz_blob_triggers","qrtz_calendars","qrtz_cron_triggers",
         		                         "qrtz_fired_triggers","qrtz_job_details","qrtz_locks",
@@ -91,12 +91,12 @@ public class MyBatisPlusGenerator {
         // 注意不同的模块生成时要修改对应模块包名
         PackageConfig pc = new PackageConfig();
         pc.setParent(null);
-        pc.setEntity("cn.jeefast.system.entity");
-        pc.setMapper("cn.jeefast.system.dao");
-        pc.setXml("cn.jeefast.system.dao.mapping");
-        pc.setService("cn.jeefast.system.service");        
-        pc.setServiceImpl("cn.jeefast.system.service.impl");    
-        pc.setController("cn.jeefast.system.controller");     
+        pc.setEntity("cn.jeefast.modules.oss.entity");
+        pc.setMapper("cn.jeefast.modules.oss.dao");
+        pc.setXml("cn.jeefast.modules.oss.dao.mapping");
+        pc.setService("cn.jeefast.modules.oss.service");        
+        pc.setServiceImpl("cn.jeefast.modules.oss.service.impl");    
+        pc.setController("cn.jeefast.modules.oss.controller");     
         mpg.setPackageInfo(pc);
 
         // 注入自定义配置，可以在 VM 中使用 cfg.abc 设置的值

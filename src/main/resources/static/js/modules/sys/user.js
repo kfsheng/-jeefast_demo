@@ -137,6 +137,9 @@ var vm = new Vue({
 				});
 			});
 		},
+		exportExcel: function () {
+			window.top.location.href = baseURL + "sys/user/exportExcel?token="+token;
+		},
 		saveOrUpdate: function () {
 			var url = vm.user.userId == null ? "sys/user/save" : "sys/user/update";
 			$.ajax({

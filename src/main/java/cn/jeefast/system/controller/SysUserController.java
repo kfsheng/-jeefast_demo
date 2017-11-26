@@ -10,6 +10,9 @@ import com.baomidou.mybatisplus.plugins.Page;
 
 import cn.jeefast.common.annotation.Log;
 import cn.jeefast.common.base.BaseController;
+import cn.jeefast.common.excel.ExcelTemplate;
+import cn.jeefast.common.excel.ExcelUtil;
+import cn.jeefast.common.utils.DateUtils;
 import cn.jeefast.common.utils.Query;
 import cn.jeefast.common.utils.R;
 import cn.jeefast.common.validator.Assert;
@@ -20,9 +23,15 @@ import cn.jeefast.system.entity.SysUser;
 import cn.jeefast.system.service.SysUserRoleService;
 import cn.jeefast.system.service.SysUserService;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.URLEncoder;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * 系统用户
@@ -149,5 +158,33 @@ public class SysUserController extends BaseController {
 		sysUserService.deleteBatch(userIds);
 		
 		return R.ok();
+	}
+	
+	/**
+	 * 导出用户
+	 * @throws IOException 
+	 */
+	@Log("导出用户")
+	@RequestMapping("/exportExcel")
+	@RequiresPermissions("sys:user:exportExcel")
+	public void exportExcel(HttpServletResponse response) throws IOException{
+		Map<String, Object> params = new HashMap<String, Object>();
+		List<SysUser> userList = (List<SysUser>)sysUserService.queryList(params);
+		OutputStream os = response.getOutputStream();
+        
+		Map<String, String> map = new HashMap<String, String>();
+        map.put("title", "用户信息表");
+        map.put("total", userList.size()+" 条");
+        map.put("date", DateUtils.format(new Date(), DateUtils.DATE_TIME_PATTERN));
+        
+        //响应信息，弹出文件下载窗口
+        response.setContentType("application/vnd.ms-excel");
+        response.setHeader("Content-Disposition",  "attachment; filename="+ URLEncoder.encode("用户信息表.xls", "UTF-8"));  
+
+        ExcelTemplate et = ExcelUtil.getInstance().handlerObj2Excel("web-info-template.xls", userList, SysUser.class, true);
+        et.replaceFinalData(map);
+        et.wirteToStream(os);
+        os.flush();
+        os.close();
 	}
 }
