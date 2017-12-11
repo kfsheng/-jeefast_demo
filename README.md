@@ -35,10 +35,6 @@ JeeFast快速开发平台是基于多个优秀的开源项目，将各个亮点�
 - 项目访问路径：http://localhost:8080/jeefast
 - 账号密码：admin/123456
 
-## 鸣谢
-1.[renren-fastplus](https://gitee.com/babaio/renren-fastplus)
-2.[mybatis-plus](https://gitee.com/baomidou/mybatis-plus)
-
 ## 效果图
 ![输入图片说明](https://gitee.com/uploads/images/2017/1106/212319_6de26405_718698.jpeg "登录.jpg")
 ![输入图片说明](https://gitee.com/uploads/images/2017/1106/212334_a2f6eff7_718698.jpeg "系统首页.jpg")
