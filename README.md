@@ -13,7 +13,6 @@ JeeFast快速开发平台是基于多个优秀的开源项目，将各个亮点�
 
 ## 如何交流、反馈、参与贡献？
 - Git仓库：https://gitee.com/theodo/jeefast
-- QQ交流群：583154815
 - 如需关注项目最新动态，请Watch、Star项目
 
 ## 技术选型：
